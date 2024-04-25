@@ -11,3 +11,6 @@ Click **resetResult** in order to reset and do continue for other Input. Thanks 
 3) Copy .js in `src`, should contained `App.css`,`App.js` and `index.js` to your new project `src`.
 4) In terminal `npm start`
 5) Thanks for your time !!
+
+# Try on GitHub
+https://tesune.github.io/Simple-React-Calculator/
