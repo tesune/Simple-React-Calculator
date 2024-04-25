@@ -1,23 +1,43 @@
 * {
     font-family: sans-serif;
 }
-input,
-button {
-    font-size: 20px;
-    padding: 10px;
+
+.result-p {
+font-size: 35px;
+margin-left: 5px;
+color: rgb(255, 69, 0);
+}
+
+input, button {
+    font-size: 30px;
+    padding: 20px;
     border-radius: 5px;
 }
 input {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 button {
     border: 1px solid gray;
     background: whitesmoke;
+    padding: 21px;
     margin-right: 5px;
 }
+button:hover {
+    background: rgb(204, 204, 204);
+    cursor: pointer;
+}
+
 button:nth-last-child(2),
 button:nth-last-child(1) {
     background: tomato;
     color: white;
 }
+
+button:nth-last-child(2):hover,
+button:nth-last-child(1):hover {
+    background: #cf4e37;
+}
+
+
+
