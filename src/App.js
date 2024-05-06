@@ -4,7 +4,7 @@ import "./App.css";
 function App() { 
   const inputRef = useRef(null); 
   const resultRef = useRef(null); 
-  const [result, setResult] = useState(0); 
+  const [result, setResult] = useState(0);
 
   function plus(e) { 
     e.preventDefault(); 
@@ -16,7 +16,7 @@ function App() {
       if (typeof result === 'string') { // If result is 'string' then reset it to 0
         result = 0;
       }
-      return result + Number(inputRef.current.value) // Exit if block and return to the function
+      return result + Number(inputRef.current.value); // Exit if block and return to the function
     });
   }; 
  
@@ -26,7 +26,7 @@ function App() {
       if (typeof result === 'string') {
         result = 0;
       }
-      return result - Number(inputRef.current.value)
+      return result - Number(inputRef.current.value);
     }); 
   };
  
@@ -36,22 +36,22 @@ function App() {
       if (typeof result === 'string') {
         result = 0;
       } 
-      return result * Number(inputRef.current.value)
+      return result * Number(inputRef.current.value);
     }); 
   }; 
  
   function divide(e) {
     e.preventDefault();
-    const inputVal = inputRef.current.value;
-    if (isNaN(inputVal) || inputVal <= 0) { // Check if input is >= 0, if FALSE then show error message
-      setResult('Error: Enter number greater than 0 "hint: do not divide by zero"'); 
-      return; 
+    const inputVal = Number(inputRef.current.value);
+    if (isNaN(inputVal) || inputVal === 0) { // Check if input is not number or input equal 0. If invalid, set result to error message
+      setResult('Error: Enter number greater than 0 "hint: Cannot divide by zero"'); 
+      return; // Exit the function with return
     }
     setResult((result)=>{
       if (typeof result === 'string') {
         result = 0;
       } 
-      return result / Number(inputVal);
+      return result / inputVal;
     }); 
   };
  
