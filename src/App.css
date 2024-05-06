@@ -3,25 +3,27 @@
 }
 
 .result-p {
-font-size: 35px;
+font-size: 30px;
 margin-left: 5px;
 color: rgb(255, 69, 0);
 }
 
 input, button {
-    font-size: 30px;
-    padding: 20px;
+    font-size: 25px;
     border-radius: 5px;
 }
 input {
+    width: 430px;
+    padding: 20px;
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 button {
+    padding: 20px;
     border: 1px solid gray;
     background: whitesmoke;
-    padding: 21px;
-    margin-right: 5px;
+    margin: auto 5px 5px auto;
+    width: 75px;
 }
 button:hover {
     background: rgb(204, 204, 204);
