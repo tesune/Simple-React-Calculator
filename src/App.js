@@ -5,34 +5,54 @@ function App() {
   const inputRef = useRef(null); 
   const resultRef = useRef(null); 
   const [result, setResult] = useState(0); 
- 
+
   function plus(e) { 
     e.preventDefault(); 
+    // Previous Method
     // const inputVal = inputRef.current.value;
     // const newResult = result + Number(inputVal);
     // setResult(newResult);
-    setResult((result) => result + Number(inputRef.current.value)); 
+    setResult((result) => {
+      if (typeof result === 'string') { // If result is 'string' then reset it to 0
+        result = 0;
+      }
+      return result + Number(inputRef.current.value) // Exit if block and return to the function
+    });
   }; 
  
   function minus(e) { 
   	e.preventDefault(); 
-    const inputVal = inputRef.current.value;
-    const newResult = result - Number(inputVal);
-    setResult(newResult); 
+    setResult((result)=>{
+      if (typeof result === 'string') {
+        result = 0;
+      }
+      return result - Number(inputRef.current.value)
+    }); 
   };
  
   function times(e) { 
     e.preventDefault(); 
-    const inputVal = inputRef.current.value;
-    const newResult = result * Number(inputVal);
-    setResult(newResult); 
+    setResult((result)=>{
+      if (typeof result === 'string') {
+        result = 0;
+      } 
+      return result * Number(inputRef.current.value)
+    }); 
   }; 
  
   function divide(e) {
     e.preventDefault();
     const inputVal = inputRef.current.value;
-    const newResult = result / Number(inputVal);
-    setResult(newResult); 
+    if (isNaN(inputVal) || inputVal <= 0) { // Check if input is >= 0, if FALSE then show error message
+      setResult('Error: Enter number greater than 0 "hint: do not divide by zero"'); 
+      return; 
+    }
+    setResult((result)=>{
+      if (typeof result === 'string') {
+        result = 0;
+      } 
+      return result / Number(inputVal);
+    }); 
   };
  
   function resetInput(e) { 
